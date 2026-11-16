@@ -8,24 +8,41 @@
     html, body {
       height: 100%;
       margin: 0;
+      overflow: hidden;
     }
 
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: #111;
     }
 
-    img {
-      max-width: 80%;
-      max-height: 80%;
-      display: block;
-      will-change: transform;
+    .ghost {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 320px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    #image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 320px;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 2;
     }
   </style>
 </head>
 <body>
-  <img src="https://picsum.photos/800/600" alt="Image centrée">
+  <img class="ghost" id="ghost3" src="https://picsum.photos/800/600" alt="">
+  <img class="ghost" id="ghost2" src="https://picsum.photos/800/600" alt="">
+  <img class="ghost" id="ghost1" src="https://picsum.photos/800/600" alt="">
+  <img id="image" src="https://picsum.photos/800/600" alt="Image qui suit le curseur">
+
   <script src="script.js"></script>
 </body>
 </html>
